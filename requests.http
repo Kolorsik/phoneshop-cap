@@ -1,0 +1,29 @@
+GET http://localhost:4004/catalog/Phones/11111
+
+###
+PATCH http://localhost:4004/catalog/Phones/1
+Content-Type: application/json
+
+{
+    "stock": 1000
+}
+
+###
+POST http://localhost:4004/catalog/Orders
+Content-Type: application/json
+
+{
+    "phone_ID": 1, "amount": 2
+}
+
+###
+POST http://localhost:4004/catalog/Phones
+Content-Type: application/json
+
+{
+    "ID": 6,
+    "title": "test",
+    "producer_ID": 1001,
+    "price": 200,
+    "stock": 321355
+}

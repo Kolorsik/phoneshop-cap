@@ -1,0 +1,93 @@
+{
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "phoneshop",
+        "type": "application",
+        "title": "Browse Phones",
+        "description": "Sample Application",
+        "i18n": "i18n/i18n.properties",
+        "dataSources": {
+            "CatalogService": {
+                "uri": "/catalog/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            },
+            "StatsService": {
+                "uri": "/stats/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "libs": {}
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "": {
+                "dataSource": "CatalogService",
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true,
+                    "groupProperties": {
+                        "default": {
+                            "submit": "Auto"
+                        }
+                    }
+                }
+            }
+        },
+        "routing": {
+            "routes": [{
+                    "pattern": "",
+                    "name": "PhonesList",
+                    "target": "PhonesList"
+                },
+                {
+                    "pattern": "Phones({key})",
+                    "name": "PhonesDetails",
+                    "target": "PhonesDetails"
+                }
+            ],
+            "targets": {
+                "PhonesList": {
+                    "type": "Component",
+                    "id": "PhonesList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "Phones",
+                            "navigation": {
+                                "Phones": {
+                                    "detail": {
+                                        "route": "PhonesDetails"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "PhonesDetails": {
+                    "type": "Component",
+                    "id": "PhonesDetails",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "Phones"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
