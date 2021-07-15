@@ -1,4 +1,4 @@
-GET http://localhost:4004/catalog/Phones/11111
+GET http://localhost:4004/catalog/Phones/1
 
 ###
 PATCH http://localhost:4004/catalog/Phones/1
@@ -13,7 +13,7 @@ POST http://localhost:4004/catalog/Orders
 Content-Type: application/json
 
 {
-    "phone_ID": 1, "amount": 2
+    "phone_ID": 4, "amount": 22
 }
 
 ###
@@ -21,9 +21,10 @@ POST http://localhost:4004/catalog/Phones
 Content-Type: application/json
 
 {
-    "ID": 6,
+    "ID": 61,
     "title": "test",
     "producer_ID": 1001,
     "price": 200,
-    "stock": 321355
+    "stock": 321355,
+    "imageUrl": "content2.onli/catalog/device/main/7"
 }

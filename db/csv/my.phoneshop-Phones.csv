@@ -1,6 +1,6 @@
-ID,TITLE,PRODUCER_ID,PRICE,STOCK
-1,Redmi Note 8,1001,139.99,100
-2,Galaxy S20,1002,699.99,100
-3,Redmi Note 10S,1001,339.99,100
-4,X3 NFC,1003,289.99,100
-5,iPhone 11,1004,899.99,100
+ID,TITLE,PRODUCER_ID,PRICE,STOCK,IMAGEURL
+1,Redmi Note 8,1001,139.99,100,https://content2.onliner.by/catalog/device/main/c5d978963a070168682d3320d4626130.jpeg
+2,Galaxy S20,1002,699.99,100,https://content2.onliner.by/catalog/device/main/0b2a8e556e11e345f772ff65073146bd.jpeg
+3,Redmi Note 10S,1001,339.99,100,https://content2.onliner.by/catalog/device/main/c74035866ca81f3cd53e4238d5479ec5.jpeg
+4,X3 NFC,1003,289.99,100,https://content2.onliner.by/catalog/device/main/7aa49812f0e3ed8ce0742ee1b56244c8.jpeg
+5,iPhone 11,1004,899.99,100,https://content2.onliner.by/catalog/device/main/e2189f90f9088975c553ec33431fc186.jpeg

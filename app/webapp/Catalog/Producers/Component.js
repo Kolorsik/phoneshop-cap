@@ -1,6 +1,6 @@
 sap.ui.define(
     ['sap/fe/core/AppComponent'],
-    ac => ac.extend('phoneshop.Component', {
+    ac => ac.extend('producers.Component', {
         metadata: {
             manifest: 'json'
         }

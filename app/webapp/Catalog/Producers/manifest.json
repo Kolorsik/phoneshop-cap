@@ -1,21 +1,14 @@
 {
     "_version": "1.8.0",
     "sap.app": {
-        "id": "phoneshop",
+        "id": "producers",
         "type": "application",
-        "title": "Browse Phones",
+        "title": "Browse Producers",
         "description": "Sample Application",
         "i18n": "i18n/i18n.properties",
         "dataSources": {
             "CatalogService": {
                 "uri": "/catalog/",
-                "type": "OData",
-                "settings": {
-                    "odataVersion": "4.0"
-                }
-            },
-            "StatsService": {
-                "uri": "/stats/",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "4.0"
@@ -50,40 +43,40 @@
         "routing": {
             "routes": [{
                     "pattern": "",
-                    "name": "PhonesList",
-                    "target": "PhonesList"
+                    "name": "ProducersList",
+                    "target": "ProducersList"
                 },
                 {
-                    "pattern": "Phones({key})",
-                    "name": "PhonesDetails",
-                    "target": "PhonesDetails"
+                    "pattern": "Producers({key})",
+                    "name": "ProducersDetails",
+                    "target": "ProducersDetails"
                 }
             ],
             "targets": {
-                "PhonesList": {
+                "ProducersList": {
                     "type": "Component",
-                    "id": "PhonesList",
+                    "id": "ProducersList",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "Phones",
+                            "entitySet": "Producers",
                             "navigation": {
-                                "Phones": {
+                                "Producers": {
                                     "detail": {
-                                        "route": "PhonesDetails"
+                                        "route": "ProducersDetails"
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "PhonesDetails": {
+                "ProducersDetails": {
                     "type": "Component",
-                    "id": "PhonesDetails",
+                    "id": "ProducersDetails",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
-                            "entitySet": "Phones"
+                            "entitySet": "Producers"
                         }
                     }
                 }

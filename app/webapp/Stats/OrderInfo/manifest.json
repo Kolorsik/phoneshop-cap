@@ -1,0 +1,86 @@
+{
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "orders",
+        "type": "application",
+        "title": "Browse Orders",
+        "description": "Sample Application",
+        "i18n": "i18n/i18n.properties",
+        "dataSources": {
+            "CatalogService": {
+                "uri": "/stats/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "libs": {}
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "": {
+                "dataSource": "CatalogService",
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true,
+                    "groupProperties": {
+                        "default": {
+                            "submit": "Auto"
+                        }
+                    }
+                }
+            }
+        },
+        "routing": {
+            "routes": [{
+                    "pattern": "",
+                    "name": "OrdersInfoList",
+                    "target": "OrdersInfoList"
+                },
+                {
+                    "pattern": "OrderInfo({key})",
+                    "name": "OrdersInfoDetails",
+                    "target": "OrdersInfoDetails"
+                }
+            ],
+            "targets": {
+                "OrdersInfoList": {
+                    "type": "Component",
+                    "id": "OrdersInfoList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "OrderInfo",
+                            "navigation": {
+                                "OrderInfo": {
+                                    "detail": {
+                                        "route": "OrdersInfoDetails"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "OrdersInfoDetails": {
+                    "type": "Component",
+                    "id": "OrdersInfoDetails",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "OrderInfo"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
