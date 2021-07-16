@@ -10,6 +10,10 @@ module.exports = cds.service.impl(srv => {
         }
     })
 
+    srv.after('READ', 'Watches', each => {
+        each.title += ' --- nice watch, man :D'
+    })
+
     srv.before('CREATE', 'Orders', async req => {
         const { phone_ID, amount } = req.data;
         const [phone] = await cds.transaction(req).run(
