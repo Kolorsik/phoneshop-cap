@@ -11,7 +11,7 @@ module.exports = cds.service.impl(srv => {
     })
 
     srv.after('READ', 'Watches', each => {
-        if (each.price) {
+        if (each.price > 100) {
             each.title += ' --- nice watch, man :D'
         }
     })
