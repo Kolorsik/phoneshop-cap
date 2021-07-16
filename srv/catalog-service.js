@@ -11,7 +11,9 @@ module.exports = cds.service.impl(srv => {
     })
 
     srv.after('READ', 'Watches', each => {
-        each.title += ' --- nice watch, man :D'
+        if (each.price) {
+            each.title += ' --- nice watch, man :D'
+        }
     })
 
     srv.before('CREATE', 'Orders', async req => {
